@@ -1,0 +1,251 @@
+<style>
+  .login {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+  }
+  .login > img {
+    flex: 1;
+  }
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .login-form .container{
+    max-width: 359px;
+    margin: 0 auto;
+  }
+
+  .login-form__title {
+    text-align: center;
+    font-size: 24px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #2D3748;
+  }
+
+  .login-form__subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A202C;
+  }
+
+  .login-form form {
+    margin: 0 auto;
+  }
+
+  .login-form__input-label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .login-form__input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .login-form__forgot-link {
+    display: block;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: right;
+    line-height: 16px;
+    letter-spacing: 0em;
+    color: #2C5282;
+    margin: 10px 0 20px;
+  }
+  .login-form__forgot-link:hover {
+    text-decoration: underline;
+  }
+
+  .login-form__checkbox {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  .login-form__checkbox input[type="checkbox"]{
+    cursor: pointer;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    border: 2px solid #7C3AED;
+    border-radius: 3px;
+    margin-right: 10px;
+  }
+  .login-form__checkbox input[type="checkbox"]:checked{
+    background-color: #7C3AED;
+  }
+
+  .login-form__buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 60px;
+  }
+  .login-form__submit {
+    width: 347px;
+    height: 50px;
+    padding: 10px;
+    background-color: #7C3AED;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0em;
+    transition: .3s ease background-color;
+  }
+  .login-form__submit:hover {
+    background-color: #9B61FF;
+  }
+
+  .login-form__google-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 347px;
+    height: 50px;
+    background-color: #2D3748;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0em;
+    transition: .3s ease background-color;
+  }
+  .login-form__google-button:hover{
+    background-color: #495368;
+  }
+
+
+
+form .login-form__input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+   form .login-form__input-group .input-group {
+  position: relative;
+}
+
+ form .login-form__input-group .input-group .input {
+  width: 100%;
+  padding: 17.6px 25px;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 4px;
+  font: inherit;
+  color: #000;
+  background-color: transparent;
+  outline: 2px solid #fff;
+  transition: 0.3s ease outline;
+}
+ form .login-form__input-group .input-group .input:autofill {
+  background-color: red;
+  border: 3px solid darkorange;
+}
+
+ form .login-form__input-group .input-group .input-label {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  transform: translate(5px, 20px);
+  transition: transform 0.25s;
+  cursor: text;
+  line-height: 1;
+  font-size: 1em;
+  color: rgba(0,0,0,0.6);
+}
+
+ form .login-form__input-group .input-group .input:focus + .input-label,
+ form .login-form__input-group .input-group .input:valid + .input-label {
+  transform: translate(0px, -12px) scale(0.8);
+  color: #7C3AED;
+  padding-inline: 5px;
+  background-color: #fff;
+  line-height: 1;
+}
+
+ form .login-form__input-group .input-group .input:is(:focus, :valid) {
+  outline-color: #7C3AED;
+}
+</style>
+
+<div class="login">
+  <img src="../../../assets/images/bgLogin.png" alt="bgLogin">
+  <section class="login-form">
+    <div class="container">
+      <h1 class="login-form__title">Bienvenido</h1>
+      <p class="login-form__subtitle">Inicia Sesión</p>
+
+      <form>
+        <div class="login-form__input-group">
+          <div class="input-group">
+            <input
+              type="text"
+              required
+              autoComplete="off"
+              class="input"
+              id="correo"
+            />
+            <label for="correo" class="input-label">
+              Correo Electrónico
+            </label>
+          </div>
+          <div class="input-group">
+            <input
+              type="password"
+              required
+              autoComplete="off"
+              class="input"
+              id="contraseña"
+            />
+            <label for="contraseña" class="input-label">
+              Contraseña
+            </label>
+          </div>
+        </div>
+
+        <a href="#" class="login-form__forgot-link">¿Olvidaste tu contraseña?</a>
+
+        <div class="login-form__checkbox">
+          <input type="checkbox" id="remember" name="remember">
+          <label for="remember">Recordar correo</label>
+        </div>
+
+        <div class="login-form__buttons">
+          <button type="submit" class="login-form__submit" [routerLink]="['/posts']">Ingresar</button>
+          <button type="button" class="login-form__google-button"><img src="../../../assets/images/iconLoginGoogle.png" alt="iconLoginGoogle">Ingresar con Google</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>

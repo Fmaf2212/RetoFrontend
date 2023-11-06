@@ -1,0 +1,254 @@
+<style>
+  .tablePosts {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 1162px;
+    margin: 0 auto;
+  }
+
+  th {
+    background: #808692;
+    color: #E6E7E9;
+    height: 48px;
+    font-weight: 500;
+    padding: 8px;
+  }
+
+  td {
+    height: 48px;
+    /* Altura de las celdas */
+    padding: 8px;
+    border-top: 2px solid #E6E7E9;
+    border-bottom: 2px solid #E6E7E9;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    font-size: 14px;
+  }
+  .user-details {
+    height: 111px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .user-details p{
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  .user-details button{
+    background-color: rgba(124, 58, 237, 1);
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    font-family: Inter;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    transition: .3s ease background-color;
+  }
+  .user-details button:hover{
+    background-color: #9B61FF;
+  }
+</style>
+
+<div class="tablePosts">
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Username</th>
+        <th>Dirección</th>
+        <th>Correo</th>
+        <th>Phone Number</th>
+        <th>Posts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users1; let i = index">
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.address }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td (click)="toggleUserDetails(i)" style="cursor: pointer"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="arrow">
+            <path
+              d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+          </svg></td>
+      </tr>
+      <tr  *ngFor="let user of users1; let i = index">
+        <td [colSpan]="6" *ngIf="activeUserIndex === i">
+          <div class="user-details">
+            <p>Aún no tienes posts</p>
+            <button>Crear un post</button>
+          </div>
+        </td>
+      </tr>
+
+      <tr *ngFor="let user of users2; let i = index">
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.address }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td (click)="toggleUserDetails2(i)" style="cursor: pointer"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="arrow">
+            <path
+              d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+          </svg></td>
+      </tr>
+      <tr  *ngFor="let user of users2; let i = index">
+        <td [colSpan]="6" *ngIf="activeUserIndex2 === i">
+          <div class="user-details">
+            <p>Aún no tienes posts</p>
+            <button>Crear un post</button>
+          </div>
+        </td>
+      </tr>
+
+      <tr *ngFor="let user of users3; let i = index">
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.address }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td (click)="toggleUserDetails3(i)" style="cursor: pointer"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="arrow">
+            <path
+              d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+          </svg></td>
+      </tr>
+      <tr  *ngFor="let user of users3; let i = index">
+        <td [colSpan]="6" *ngIf="activeUserIndex3 === i">
+          <div class="user-details">
+            <p>Aún no tienes posts</p>
+            <button>Crear un post</button>
+          </div>
+        </td>
+      </tr>
+
+      <tr *ngFor="let user of users4; let i = index">
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.address }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td (click)="toggleUserDetails4(i)" style="cursor: pointer"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="arrow">
+            <path
+              d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+          </svg></td>
+      </tr>
+      <tr  *ngFor="let user of users4; let i = index">
+        <td [colSpan]="6" *ngIf="activeUserIndex4 === i">
+          <div class="user-details">
+            <p>Aún no tienes posts</p>
+            <button>Crear un post</button>
+          </div>
+        </td>
+      </tr>
+
+      <tr *ngFor="let user of users5; let i = index">
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.address }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td (click)="toggleUserDetails5(i)" style="cursor: pointer"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="arrow">
+            <path
+              d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+          </svg></td>
+      </tr>
+      <tr  *ngFor="let user of users5; let i = index">
+        <td [colSpan]="6" *ngIf="activeUserIndex5 === i">
+          <div class="user-details">
+            <p>Aún no tienes posts</p>
+            <button>Crear un post</button>
+          </div>
+        </td>
+      </tr>
+
+      <tr *ngFor="let user of users6; let i = index">
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.address }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td (click)="toggleUserDetails6(i)" style="cursor: pointer"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="arrow">
+            <path
+              d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+          </svg></td>
+      </tr>
+      <tr  *ngFor="let user of users6; let i = index">
+        <td [colSpan]="6" *ngIf="activeUserIndex6 === i">
+          <div class="user-details">
+            <p>Aún no tienes posts</p>
+            <button>Crear un post</button>
+          </div>
+        </td>
+      </tr>
+      <!-- <tr>
+        <td>Savannah Howard</td>
+        <td>Savannah Howard</td>
+        <td>8445 Railroad St undefined Tampa</td>
+        <td>jeff.brown@example.com</td>
+        <td>(201) 555-0124</td>
+        <td><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+            <path
+              d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+          </svg></td>
+      </tr>
+      <tr>
+        <td>Morris Cooper</td>
+        <td>Morris Cooper</td>
+        <td>8584 W Sherman Dr undefined Desoto</td>
+        <td>terra.hamilton@example.com</td>
+        <td>(505) 555-0124</td>
+        <td><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+            <path
+              d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+          </svg></td>
+      </tr>
+      <tr>
+        <td>Victoria Lane</td>
+        <td>Victoria Lane</td>
+        <td>1921 Ranchview Dr undefined San Francisco</td>
+        <td>deanna.curtis@example.com</td>
+        <td>(704) 555-0127</td>
+        <td><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+            <path
+              d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+          </svg></td>
+      </tr>
+      <tr>
+        <td>Stella Warren</td>
+        <td>Stella Warren</td>
+        <td>6380 Fincher Rd undefined Tucson</td>
+        <td>keith.richards@example.com</td>
+        <td>(219) 555-0114</td>
+        <td><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+            <path
+              d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+          </svg></td>
+      </tr>
+      <tr>
+        <td>Max Alexander</td>
+        <td>Max Alexander</td>
+        <td>4324 Mcclellan Rd undefined Denton</td>
+        <td>max.terry@example.com</td>
+        <td>(319) 555-0115</td>
+        <td><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+            <path
+              d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+          </svg></td>
+      </tr> -->
+    </tbody>
+  </table>
+</div>
